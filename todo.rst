@@ -3,3 +3,4 @@
    most limits. . .
 #. Add an option for provision user to have password set-up (and then
    force him to provide it before sudo)
+#. Update hostname and /etc/hosts

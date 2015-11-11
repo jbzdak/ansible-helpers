@@ -16,7 +16,3 @@ Playbook: initial-setup.yaml will:
   * Enable ufw firewall
 
 
-Roles:
-* amend hosts file
-* ``ansible-playbook -i hosts-test -l test initial-setup.yaml -u jbzdak -kK``
-
