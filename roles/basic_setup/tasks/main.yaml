@@ -1,0 +1,13 @@
+---
+- name: create provision user
+# Provision user is NOT in sudo group we will add his priveleges via
+# sudoers file
+  user: name={{provision_user}} shell=/bin/bash system=yes
+        password=! groups=
+- name: create .ssh
+  file: path=/home/{{provision_user}}/.ssh owner={{provision_user}}
+        group={{provision_user}} mode=700 state=directory
+- name: update authorized keys
+  assemble: src=keys dest=/home/{{provision_user}}/.ssh/authorized_keys
+            remote_src=false owner={{provision_user}}
+            group={{provision_user}} mode=600

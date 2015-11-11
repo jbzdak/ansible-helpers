@@ -1,0 +1,14 @@
+---
+allow_provision_user_to
+ufw:
+  default_policy: deny
+  basic_ports:
+    - proto: tcp
+      port: 22
+      rule: allow
+    - proto: tcp
+      port: 80
+      rule: allow
+    - proto: tcp
+      port: 443
+      rule: allow
